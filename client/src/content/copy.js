@@ -180,3 +180,21 @@ export const notificationTypeLabels = {
   workspace_unfrozen: 'Unfrozen',
   workspace_deleted: 'Deleted',
 };
+
+export const activityActionLabels = {
+  board_created: 'created this workspace',
+  board_frozen: 'froze this workspace',
+  board_unfrozen: 'unfroze this workspace',
+  task_created: 'created a task',
+  task_updated: 'updated a task',
+  task_moved: 'moved a task',
+  comment_added: 'commented on a task',
+  member_invited: 'invited a teammate',
+  member_removed: 'removed a member',
+  member_promoted: 'promoted a member to admin',
+  member_demoted: 'removed admin rights',
+  invite_accepted: 'accepted a workspace invite',
+  ownership_transfer_requested: 'requested an ownership transfer',
+  ownership_transferred: 'transferred workspace ownership',
+  list_created: 'added a list',
+};

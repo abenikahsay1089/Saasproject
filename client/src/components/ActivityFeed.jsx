@@ -1,3 +1,5 @@
+import { activityActionLabels } from '../content/copy.js';
+
 /**
  * Renders recent board activity from the API (create/move/comment events).
  */
@@ -11,18 +13,25 @@ export default function ActivityFeed({ activities }) {
   }
   return (
     <ul className="space-y-3 text-sm">
-      {activities.map((a) => (
-        <li
-          key={a.id}
-          className="rounded-lg border border-slate-200 bg-white px-3 py-2 dark:border-slate-800 dark:bg-slate-900"
-        >
-          <span className="font-medium text-slate-800 dark:text-slate-200">
-            {a.user_name || 'Someone'}
-          </span>{' '}
-          <span className="text-slate-600 dark:text-slate-400">{a.action.replace(/_/g, ' ')}</span>
-          <p className="text-xs text-slate-400">{new Date(a.created_at).toLocaleString()}</p>
-        </li>
-      ))}
+      {activities.map((a) => {
+        const label = activityActionLabels[a.action] || a.action.replace(/_/g, ' ');
+        const detail = a.details?.title || a.details?.boardTitle || a.details?.snippet;
+        return (
+          <li
+            key={a.id}
+            className="rounded-lg border border-slate-200 bg-white px-3 py-2 dark:border-slate-800 dark:bg-slate-900"
+          >
+            <p className="text-slate-800 dark:text-slate-200">
+              <span className="font-medium">{a.user_name || 'Someone'}</span>{' '}
+              <span className="text-slate-600 dark:text-slate-400">{label}</span>
+              {detail && (
+                <span className="text-slate-500 dark:text-slate-400"> — {detail}</span>
+              )}
+            </p>
+            <p className="text-xs text-slate-400">{new Date(a.created_at).toLocaleString()}</p>
+          </li>
+        );
+      })}
     </ul>
   );
 }

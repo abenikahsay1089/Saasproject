@@ -70,7 +70,7 @@ export default function Sidebar() {
       </nav>
       <div className="border-t border-slate-200 p-4 dark:border-slate-800">
         <p className="text-xs leading-relaxed text-slate-500 dark:text-slate-400">
-          Tip: use Find people to discover teammates, then invite them from a workspace.
+          Tip: find people globally, message anyone privately, or invite them into a workspace.
         </p>
       </div>
     </aside>

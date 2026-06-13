@@ -1,18 +1,20 @@
 # TaskFlow — SaaS task management (Trello-style)
 
-Production-oriented full-stack demo: **React + Vite + Tailwind**, **Express + PostgreSQL**, **JWT auth**, **Socket.io** real-time board updates, **Kanban** with **@dnd-kit**, notifications, comments, and an activity timeline.
+Production-oriented full-stack demo: **React + Vite + Tailwind**, **Express + PostgreSQL**, **JWT auth**, **Socket.io** real-time board updates, **Kanban** with **@dnd-kit**, notifications, comments, team chat, private messages, and an activity timeline.
+
+**Repository:** [github.com/abenikahsay1089/Saasproject](https://github.com/abenikahsay1089/Saasproject)
 
 ## Features
 
 - Register / login with bcrypt-hashed passwords and JWT sessions
-- Boards with default lists (To Do, In Progress, Done); invite members by email
-- Tasks with assignee, priority, status, due date, description
+- Workspaces with default lists (To Do, In Progress, Done); invite members by email or username
+- Roles: owner, admin, member — with ownership transfer and workspace freeze/delete
+- Tasks with assignee, priority, status, due date, description; status syncs with kanban columns
 - Drag-and-drop between columns with order persisted via `POST /api/lists/:listId/reorder`
-- Real-time: `taskCreated`, `taskUpdated`, `taskMoved`, `tasksReordered`, `taskDeleted`, `activityAdded`, and personal `notification` events
-- Notifications for assignment, due date changes, completion, comments, and invites
-- Task comments stored in PostgreSQL
-- Activity log for board-level audit trail
-- Dark mode (UI toggle)
+- Real-time board updates and personal inbox notifications
+- Team chat per workspace and private DMs between any users
+- Global people search by name or @username
+- Task comments, activity log, and dark mode
 
 ## Architecture
 
